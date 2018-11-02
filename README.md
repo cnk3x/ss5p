@@ -30,7 +30,7 @@ Flags:
 ## 在容器里运行
 
 ```
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -mod vendor -ldflags "-s -w -X main.version=`cat VERSION`" -o  docker/ss5p
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -mod vendor -ldflags "-s -w -X main.version=`cat VERSION`"
 upx -9 docker/ss5p
 docker build -t wenaiyao/ss5p .
 docker run -p 18080:8080 -e usr=<usr> -e pwd=<pwd> -e ip=<public_ip> wenaiyao/ss5p
